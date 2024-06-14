@@ -64,7 +64,7 @@
     <div class="container">
         <h1>BIENVENIDO A LAS OPERACIONES</h1>
         <center>
-            <form action="operaciones.php" method="post">
+            <form action="calculadora.php" method="post">
                 <label for="num1">Dato 1</label>
                 <input type="text" id="num1" name="num1" required>
                 <label for="num2">Dato 2</label>
