@@ -34,9 +34,11 @@
             display: flex;
             justify-content: center;
             margin-top: 10px;
-            
         }
-
+        .buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+        }
     </style>
 </head>
 
@@ -54,31 +56,37 @@
                 $respuesta = $num1 + $num2;
             } elseif ($operation == 'restar') {
                 $respuesta = $num1 - $num2;
+            } elseif ($operation == 'multiplicar') {
+                $respuesta = $num1 * $num2;
+            } elseif ($operation == 'dividir') {
+                $respuesta = $num1 / $num2;
             }
         } else {
             $respuesta = "Por favor, ingrese valores numéricos válidos.";
         }
     }
     ?>
-<center>
+
     <div class="container">
         <h1>BIENVENIDO A LAS OPERACIONES</h1>
-        <center>
             <form action="operaciones.php" method="post">
+                <center>
                 <label for="num1">Dato 1</label>
-                <input type="text" id="num1" name="num1" required>
+                <input type="text" id="num1" name="num1" required><br><br>
                 <label for="num2">Dato 2</label>
                 <input type="text" id="num2" name="num2" required><br><br>
-                <button type="submit" name="operation" value="sumar" style="border-radius: 15px;">Sumar</button>
-                <button type="submit" name="operation" value="restar" style="margin-left: 30px; border-radius: 15px;">Restar</button>
+                </center>
+                <button type="submit" name="operation" value="sumar">Sumar</button>
+                <button type="submit" name="operation" value="restar" style="margin-left: 30px;">Restar</button>
+                <button type="submit" name="operation" value="multiplicar">multiplicar</button>
+                <button type="submit" name="operation" value="dividir" style="margin-left: 30px;">dividir</button>
                 <br><br>
                 <label for="respuesta">Respuesta: </label>
                 <?php
                 echo $respuesta
                 ?>
             </form>
-            </center>
     </div>
-    </center>
+ 
 </body>
 </html>
